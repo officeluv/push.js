@@ -20,11 +20,11 @@ export default class Permission {
     }
 
     /**
-   * Requests permission for desktop notifications
-   * @param {Function} onGranted - Function to execute once permission is granted
-   * @param {Function} onDenied - Function to execute once permission is denied
-   * @return {void, Promise}
-   */
+     * Requests permission for desktop notifications
+     * @param {Function} onGranted - Function to execute once permission is granted
+     * @param {Function} onDenied - Function to execute once permission is denied
+     * @return {void, Promise}
+     */
     request(onGranted: () => void, onDenied: () => void) {
         return arguments.length > 0
             ? this._requestWithCallback(...arguments)
@@ -32,12 +32,12 @@ export default class Permission {
     }
 
     /**
-   * Old permissions implementation deprecated in favor of a promise based one
-   * @deprecated Since V1.0.4
-   * @param {Function} onGranted - Function to execute once permission is granted
-   * @param {Function} onDenied - Function to execute once permission is denied
-   * @return {void}
-   */
+     * Old permissions implementation deprecated in favor of a promise based one
+     * @deprecated Since V1.0.4
+     * @param {Function} onGranted - Function to execute once permission is granted
+     * @param {Function} onDenied - Function to execute once permission is denied
+     * @return {void}
+     */
     _requestWithCallback(onGranted: () => void, onDenied: () => void) {
         const existing = this.get();
 
@@ -81,9 +81,9 @@ export default class Permission {
     }
 
     /**
-   * Requests permission for desktop notifications in a promise based way
-   * @return {Promise}
-   */
+     * Requests permission for desktop notifications in a promise based way
+     * @return {Promise}
+     */
     _requestAsPromise(): Promise<void> {
         const existing = this.get();
 
@@ -128,17 +128,17 @@ export default class Permission {
     }
 
     /**
-   * Returns whether Push has been granted permission to run
-   * @return {Boolean}
-   */
+     * Returns whether Push has been granted permission to run
+     * @return {Boolean}
+     */
     has() {
         return this.get() === this.GRANTED;
     }
 
     /**
-   * Gets the permission level
-   * @return {Permission} The permission level
-   */
+     * Gets the permission level
+     * @return {Permission} The permission level
+     */
     get() {
         let permission;
 
